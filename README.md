@@ -65,3 +65,19 @@ CREATE TABLE zepto (
   outOfStock BOOLEAN,
   quantity INTEGER
 );
+```
+
+### 2. Data import 
+The dataset was loaded into PostgreSQL using pgAdmin’s import functionality.
+
+In cases where import issues occurred, the \copy command was used as an alternative:
+
+```sql
+\copy zepto(category,name,mrp,discountPercent,availableQuantity,
+            discountedSellingPrice,weightInGms,outOfStock,quantity)
+FROM 'data/zepto_v2.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
+```
+Encoding issues were resolved by converting the CSV file to UTF-8 format before loading.
+
+
