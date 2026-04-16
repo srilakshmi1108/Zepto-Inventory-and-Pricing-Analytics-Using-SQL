@@ -78,6 +78,45 @@ In cases where import issues occurred, the \copy command was used as an alternat
 FROM 'data/zepto_v2.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
 ```
+
+### 3. Data Exploration
+Counted total records
+Inspected sample data
+Identified null values
+Analyzed product categories
+Compared in-stock vs out-of-stock items
+Detected duplicate SKUs across product variations
+### 4. Data Cleaning
+Removed records with zero pricing values
+Converted pricing from paise to rupees
+Standardized numeric fields for analysis
+### 5. Key Business Insights
+High discount products (>40%) were concentrated in a few categories, indicating aggressive pricing strategies
+Several high-MRP products were out of stock, suggesting potential lost revenue opportunities
+A small number of categories contributed significantly to total estimated revenue
+Premium products (MRP > ₹500) generally had lower discounts, indicating margin-focused pricing
+Price-per-gram analysis revealed inconsistencies in value across similar products
+Bulk items contributed heavily to inventory weight but not proportionally to revenue
+### 6. Business Analysis Performed
+Top products based on discount percentage
+Out-of-stock analysis for high-value items
+Revenue estimation by category
+Discount distribution across categories
+Price-per-unit (gram) evaluation
+Product segmentation based on weight
+Inventory weight contribution by category
+🛠️ Tech Stack
+SQL (PostgreSQL)
+pgAdmin
+Kaggle Dataset
+
+###  🛠️ How to Run
+1. Clone the repository  
+2. Create a PostgreSQL database  
+3. Run the SQL script to create tables  
+4. Import the dataset (ensure UTF-8 encoding)  
+5. Execute queries to reproduce analysis  
+```
 Encoding issues were resolved by converting the CSV file to UTF-8 format before loading.
 
 
